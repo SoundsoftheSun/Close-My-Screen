@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "close-my-screen",
+  "version": "${version}",
+  "name": "Close My Screen",
+  "description": "Close GUIs by clicking the empty space.",
+  "authors": [ "SoundsoftheSun" ],
+  "contact": {
+    "homepage": "https://github.com/SoundsoftheSun/Close-My-Screen"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.soundsofthesun.closeall.client.CloseallClient"
+    ],
+    "main": [
+      "net.soundsofthesun.closeall.Closeall"
+    ]
+  },
+  "mixins": [
+    "closeall.mixins.json",
+    {
+      "config": "closeall.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
