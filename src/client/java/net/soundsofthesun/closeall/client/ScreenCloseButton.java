@@ -24,7 +24,7 @@ public class ScreenCloseButton extends AbstractWidget {
 
     @Override
     public void onClick(MouseButtonEvent event, boolean isDoubleClick) {
-        Minecraft.getInstance().setScreen(null);
+        if (Minecraft.getInstance().screen != null) Minecraft.getInstance().screen.onClose();
     }
 
     @Override
