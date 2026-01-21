@@ -6,7 +6,7 @@ plugins {
 
 publishMods {
     file = remapJar.archiveFile
-    changelog = "fixed container slot desync bug, replaced button with abstractwidget"
+    changelog = ""
     type = STABLE
     modLoaders.add("fabric")
     displayName = file.map { it.asFile.name }
@@ -14,7 +14,7 @@ publishMods {
     curseforge {
         projectId = "1439056"
         accessToken = providers.gradleProperty("CURSEFORGE_TOKEN")
-        minecraftVersions.add("1.21.11")
+        minecraftVersions.add("1.21.10")
         javaVersions.add(JavaVersion.VERSION_21)
         clientRequired = true
         serverRequired = false
@@ -24,7 +24,7 @@ publishMods {
     modrinth {
         projectId = "STmMQcNi"
         accessToken = providers.gradleProperty("MODRINTH_KEY")
-        minecraftVersions.add("1.21.11")
+        minecraftVersions.add("1.21.10")
     }
 }
 
