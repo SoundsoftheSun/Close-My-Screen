@@ -1,6 +1,31 @@
 plugins {
     id 'fabric-loom' version '1.15-SNAPSHOT'
     id 'maven-publish'
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
+}
+
+publishMods {
+    file = remapJar.archiveFile
+    changelog = "fixed container slot desync bug, replaced button with abstractwidget"
+    type = STABLE
+    modLoaders.add("fabric")
+    displayName = file.map { it.asFile.name }
+
+    curseforge {
+        projectId = "1439056"
+        accessToken = providers.gradleProperty("CURSEFORGE_TOKEN")
+        minecraftVersions.add("1.21.11")
+        javaVersions.add(JavaVersion.VERSION_21)
+        clientRequired = true
+        serverRequired = false
+        projectSlug = "close-my-screen"
+    }
+
+    modrinth {
+        projectId = "STmMQcNi"
+        accessToken = providers.gradleProperty("MODRINTH_KEY")
+        minecraftVersions.add("1.21.11")
+    }
 }
 
 version = project.mod_version
